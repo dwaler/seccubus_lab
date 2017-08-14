@@ -1,0 +1,13 @@
+DEPENDENCIES
+  seccubus_lab
+    path: .
+    metadata: true
+
+GRAPH
+  apache2 (5.0.0)
+  iptables (4.2.0)
+  openssh (2.4.1)
+    iptables (>= 1.0)
+  seccubus_lab (0.1.0)
+    apache2 (>= 0.0.0)
+    openssh (>= 0.0.0)
