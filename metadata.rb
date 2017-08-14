@@ -12,6 +12,6 @@ chef_version '>= 12.1' if respond_to?(:chef_version)
 depends 'openssh'
 depends 'apache2'
 
-%w(debian ubuntu centos redhat).each do |os|
+%w(debian ubuntu centos).each do |os|
   supports os
 end

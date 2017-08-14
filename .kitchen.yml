@@ -1,0 +1,31 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  always_update_cookbooks: <%= !ENV['CI'] %>
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-16.04
+  - name: centos-7.3
+  - name: debian-9
+
+suites:
+  - name: scanner
+    run_list:
+      - recipe[seccubus_lab::scanner]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+  - name: scanner
+    run_list:
+      - recipe[seccubus_lab::victim]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
