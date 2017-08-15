@@ -22,7 +22,7 @@ suites:
       inspec_tests:
         - test/smoke/default
     attributes:
-  - name: scanner
+  - name: victim
     run_list:
       - recipe[seccubus_lab::victim]
     verifier:
